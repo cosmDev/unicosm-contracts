@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "description": "Create a new player",
+      "type": "object",
+      "required": [
+        "new_player"
+      ],
+      "properties": {
+        "new_player": {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Update player on contract",
+      "type": "object",
+      "required": [
+        "update_player_score"
+      ],
+      "properties": {
+        "update_player_score": {
+          "type": "object",
+          "required": [
+            "score"
+          ],
+          "properties": {
+            "score": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Create a new buy item",
+      "type": "object",
+      "required": [
+        "buy_item_entry"
+      ],
+      "properties": {
+        "buy_item_entry": {
+          "type": "object",
+          "required": [
+            "description",
+            "item_id",
+            "name"
+          ],
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "item_id": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
